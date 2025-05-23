@@ -1,0 +1,65 @@
+name: 'Auth endpoints'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: 'Auth endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST Login'
+      description: 'Login with the existing user.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: finn.lang@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: 'ks|%&7}wl'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      email: finn.lang@example.com
+      password: 'ks|%&7}wl'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"access_token":"1|a9ZcYzIrLURVGx6Xe41HKj1CrNsxRxe4pLA3oISo"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"error": "The provided credentials are incorrect."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -5,11 +5,21 @@ namespace App\Http\Controllers\Api\V1\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group Auth endpoints
+ */
 class LoginController extends Controller
 {
+    /**
+     * POST Login
+     *
+     * Login with the existing user.
+     *
+     * @response {"access_token":"1|a9ZcYzIrLURVGx6Xe41HKj1CrNsxRxe4pLA3oISo"}
+     * @response 422 {"error": "The provided credentials are incorrect."}
+     */
     public function store(LoginRequest $request)
     {
         $user = User::where('email', $request->email)->first();
